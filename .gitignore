@@ -1,0 +1,11 @@
+*.o
+*.a
+*.mod
+.*.sw*
+*.x
+core
+*.ptx
+*.cubin
+*.s
+*.sass
+a.out
