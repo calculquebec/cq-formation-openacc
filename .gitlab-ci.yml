@@ -1,0 +1,38 @@
+stages:
+  - build
+  - test
+  - clean
+build_cpp:
+  stage: build
+  script: 
+    - cd cpp 
+    - make
+  artifacts: 
+    paths:
+    - ./cpp/cg.x
+build_f90: 
+  stage: build
+  script: 
+    - cd f90 
+    - make
+  artifacts: 
+    paths:
+    - ./f90/cg.x
+test_cpp:
+  stage: test
+  script: 
+    - cd cpp 
+    - make
+    - ./cg.x
+test_f90: 
+  stage: test
+  script: 
+    - cd f90 
+    - make
+    - ./cg.x
+
+cleanup:
+  stage: clean
+  script: 
+    - cd cpp && make clean && cd ../f90 && make clean
+  when: always
