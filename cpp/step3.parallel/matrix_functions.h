@@ -26,8 +26,8 @@ void matvec(const matrix& A, const vector& x, const vector &y) {
   double *__restrict xcoefs=x.coefs;
   double *__restrict ycoefs=y.coefs;
 
-#pragma acc parallel loop gang worker present(row_offsets,cols,Acoefs,xcoefs,ycoefs) \
-  device_type(nvidia) num_workers(32) vector_length(32)
+#pragma acc parallel loop present(row_offsets,cols,Acoefs,xcoefs,ycoefs) \
+  device_type(nvidia) gang worker num_workers(32) vector_length(32)
   for(int i=0;i<num_rows;i++) {
     double sum=0;
     int row_start=row_offsets[i];
