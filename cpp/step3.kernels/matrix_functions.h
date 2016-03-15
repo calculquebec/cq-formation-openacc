@@ -13,12 +13,12 @@ void matvec(const matrix& A, const vector& x, const vector &y) {
 
 #pragma acc kernels present(row_offsets,cols,Acoefs,xcoefs,ycoefs)
   {
-#pragma acc loop gang worker(32)
+#pragma acc loop device_type(nvidia) gang worker(32)
     for(int i=0;i<num_rows;i++) {
       double sum=0;
       int row_start=row_offsets[i];
       int row_end=row_offsets[i+1];
-#pragma acc loop vector(32)
+#pragma acc loop device_type(nvidia) vector(32)
       for(int j=row_start;j<row_end;j++) {
         unsigned int Acol=cols[j];
         double Acoef=Acoefs[j];
