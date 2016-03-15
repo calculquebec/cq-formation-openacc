@@ -23,4 +23,4 @@ laplace2d.x: laplace2d.o
 .PHONY:clean
 
 clean:
-	rm -f *.o *.a openmp.x core
+	rm -f *.o *.a *.x core
