@@ -100,12 +100,13 @@ module matrix_mod
     acols => a%cols
     acoefs => a%coefs
 
-    !$acc parallel loop gang worker present(x,y,arow_offsets,acols,acoefs) num_workers(32) vector_length(32)
+    !$acc parallel loop present(x,y,arow_offsets,acols,acoefs) device_type(nvidia) &
+    !$acc& gang worker num_workers(32) vector_length(32)
     do i=1,a%num_rows
       tmpsum = 0.0d0
       row_start = arow_offsets(i)
       row_end   = arow_offsets(i+1)-1
-      !$acc loop vector reduction(+:tmpsum)
+      !$acc loop reduction(+:tmpsum) device_type(nvidia) vector
       do j=row_start,row_end
         acol = acols(j)
         acoef = acoefs(j)

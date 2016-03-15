@@ -101,12 +101,12 @@ module matrix_mod
     acoefs => a%coefs
 
     !$acc kernels present(acols,arow_offsets,acoefs,x,y)
-    !$acc loop gang worker(32)
+    !$acc loop device_type(nvidia) gang worker(32)
     do i=1,a%num_rows
       tmpsum = 0.0d0
       row_start = arow_offsets(i)
       row_end   = arow_offsets(i+1)-1
-      !$acc loop vector(32)
+      !$acc loop device_type(nvidia) vector(32)
       do j=row_start,row_end
         acol = acols(j)
         acoef = acoefs(j)

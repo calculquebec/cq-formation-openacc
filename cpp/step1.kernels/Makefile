@@ -1,5 +1,5 @@
 CXX=pgc++
-CXXFLAGS=-fast -ta=tesla:managed,lineinfo -Minfo=all
+CXXFLAGS=-fast -ta=tesla:managed,lineinfo -Minfo=all,intensity,ccff
 LDFLAGS=${CXXFLAGS}
 
 cg.x: main.o 
