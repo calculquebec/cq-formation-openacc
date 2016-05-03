@@ -12,4 +12,5 @@ be able to begin accelerating their own applications using OpenACC.
 License:
 -------
 Apache 2.0
+
 Original content created by Jeff Larkin, for GTC16 L6128 session.
