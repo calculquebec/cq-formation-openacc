@@ -1,5 +1,5 @@
 
-GTC16 L6128 - OpenACC Bootcamp
+Introduction to OpenACC
 ==============================
 In this session participants will learn OpenACC programming by example.
 Participants must be comfortable with C/C++ or Fortran programming, but no
@@ -12,3 +12,4 @@ be able to begin accelerating their own applications using OpenACC.
 License:
 -------
 Apache 2.0
+Original content created by Jeff Larkin, for GTC16 L6128 session.
