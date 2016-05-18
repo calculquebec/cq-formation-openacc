@@ -27,7 +27,6 @@ void allocate_vector(vector &v, unsigned int n) {
 }
 
 void free_vector(vector &v) {
-  double *vcoefs=v.coefs;
   free(v.coefs);
 
 }

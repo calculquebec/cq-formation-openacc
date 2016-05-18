@@ -29,7 +29,6 @@ void allocate_vector(vector &v, unsigned int n) {
 }
 
 void free_vector(vector &v) {
-  double *vcoefs=v.coefs;
 #pragma acc exit data delete(v.coefs)
 #pragma acc exit data delete(v)
   free(v.coefs);
