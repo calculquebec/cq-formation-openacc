@@ -1,4 +1,4 @@
-CXX=pgc++
+CXX=nvc++
 CXXFLAGS=-fast -ta=tesla:managed,lineinfo -Minfo=all,intensity,ccff
 LDFLAGS=${CXXFLAGS}
 

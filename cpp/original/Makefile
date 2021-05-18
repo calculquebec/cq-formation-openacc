@@ -1,4 +1,4 @@
-CXX=pgc++
+CXX=nvc++
 CXXFLAGS=-fast
 LDFLAGS=${CXXFLAGS}
 
