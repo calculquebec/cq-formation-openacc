@@ -1,5 +1,5 @@
 CXX=nvc++
-CXXFLAGS=-fast
+CXXFLAGS=
 LDFLAGS=${CXXFLAGS}
 
 cg.x: main.o 
