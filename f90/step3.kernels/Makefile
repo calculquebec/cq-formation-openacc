@@ -1,4 +1,4 @@
-FC=pgfortran
+FC=nvfortran
 FCFLAGS=-fast -acc -gpu=lineinfo -Minfo=all,intensity,ccff
 LDFLAGS=${FCFLAGS}
 

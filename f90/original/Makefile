@@ -1,4 +1,4 @@
-FC=pgfortran
+FC=nvfortran
 FCFLAGS=-fast
 LDFLAGS=${FCFLAGS}
 
