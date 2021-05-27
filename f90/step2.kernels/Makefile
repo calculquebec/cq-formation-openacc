@@ -1,5 +1,5 @@
 FC=pgfortran
-FCFLAGS=-fast -ta=tesla,lineinfo -Minfo=all,ccff -Mprof=ccff
+FCFLAGS=-fast -acc -gpu=lineinfo -Minfo=all,ccff -Mprof=ccff
 LDFLAGS=${FCFLAGS}
 
 cg.x: matrix.o vector.o main.o

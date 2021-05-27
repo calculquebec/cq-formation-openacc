@@ -1,5 +1,5 @@
 CXX=nvc++
-CXXFLAGS=-fast -ta=tesla,lineinfo -Minfo=all,intensity,ccff
+CXXFLAGS=-fast -acc -gpu=lineinfo -Minfo=all,intensity,ccff
 LDFLAGS=${CXXFLAGS}
 
 cg.x: main.o 
